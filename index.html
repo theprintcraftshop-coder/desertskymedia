@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desert Sky Media | Professional Media for Arizona Brands</title>
+    <meta
+      name="description"
+      content="Desert Sky Media delivers photography, videography, FAA Part 107 drone services, and social media content for Arizona businesses, creators, and real estate professionals."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg: #f3ece1;
+        --bg-strong: #e8dbc7;
+        --surface: rgba(255, 248, 240, 0.72);
+        --surface-strong: rgba(32, 20, 11, 0.9);
+        --text: #24170f;
+        --muted: #6f5a4a;
+        --line: rgba(50, 30, 18, 0.12);
+        --primary: #c9692f;
+        --primary-deep: #9d4514;
+        --accent: #edb56d;
+        --shadow: 0 24px 70px rgba(72, 42, 20, 0.14);
+        --radius-lg: 32px;
+        --radius-md: 22px;
+        --radius-sm: 16px;
+        --max-width: 1180px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Manrope", sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(237, 181, 109, 0.45), transparent 30%),
+          radial-gradient(circle at top right, rgba(201, 105, 47, 0.22), transparent 32%),
+          linear-gradient(180deg, #f7f0e6 0%, #f1e5d6 52%, #ead8c3 100%);
+        min-height: 100vh;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+        background-size: 120px 120px;
+        mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 90%);
+        opacity: 0.35;
+      }
+
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+
+      .site-shell {
+        width: min(calc(100% - 32px), var(--max-width));
+        margin: 0 auto;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 18px;
+        z-index: 20;
+        padding-top: 18px;
+      }
+
+      .nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding: 14px 18px;
+        border: 1px solid rgba(83, 51, 30, 0.14);
+        border-radius: 999px;
+        background: rgba(251, 246, 239, 0.78);
+        box-shadow: 0 14px 40px rgba(63, 33, 16, 0.08);
+        backdrop-filter: blur(20px);
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 0;
+      }
+
+      .brand-mark {
+        display: grid;
+        place-items: center;
+        width: 42px;
+        height: 42px;
+        border-radius: 14px;
+        background: linear-gradient(135deg, var(--primary), #efc276);
+        color: #fff8ee;
+        font-size: 18px;
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+      }
+
+      .brand-text {
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+      }
+
+      .brand-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.45rem;
+        line-height: 1;
+        letter-spacing: 0.02em;
+      }
+
+      .brand-tag {
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .nav-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        padding: 10px 14px;
+        border-radius: 999px;
+        color: var(--muted);
+        transition: 0.2s ease;
+      }
+
+      .nav-links a:hover {
+        background: rgba(201, 105, 47, 0.1);
+        color: var(--text);
+      }
+
+      .button,
+      .nav-cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 14px 20px;
+        border: 0;
+        border-radius: 999px;
+        background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+        color: #fff7f0;
+        font-weight: 700;
+        box-shadow: 0 16px 30px rgba(157, 69, 20, 0.26);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .button:hover,
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 18px 34px rgba(157, 69, 20, 0.32);
+      }
+
+      .button.secondary {
+        background: rgba(255, 250, 244, 0.78);
+        color: var(--text);
+        border: 1px solid rgba(64, 36, 19, 0.12);
+        box-shadow: none;
+      }
+
+      .mobile-toggle {
+        display: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 1px solid var(--line);
+        background: rgba(255, 248, 240, 0.8);
+      }
+
+      .mobile-toggle span,
+      .mobile-toggle::before,
+      .mobile-toggle::after {
+        content: "";
+        display: block;
+        width: 18px;
+        height: 2px;
+        margin: 0 auto;
+        background: var(--text);
+        border-radius: 999px;
+      }
+
+      .mobile-toggle::before {
+        margin-bottom: 4px;
+      }
+
+      .mobile-toggle::after {
+        margin-top: 4px;
+      }
+
+      main {
+        padding-bottom: 70px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 28px;
+        align-items: stretch;
+        padding: 52px 0 32px;
+      }
+
+      .hero-card,
+      .glass-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(84, 52, 29, 0.14);
+        border-radius: var(--radius-lg);
+        background: var(--surface);
+        box-shadow: var(--shadow);
+        backdrop-filter: blur(18px);
+      }
+
+      .hero-copy {
+        padding: 50px;
+      }
+
+      .eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 8px 14px;
+        border-radius: 999px;
+        background: rgba(255, 251, 246, 0.7);
+        color: var(--muted);
+        font-size: 0.85rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--primary);
+        box-shadow: 0 0 0 6px rgba(201, 105, 47, 0.12);
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+        font-family: "Cormorant Garamond", serif;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+      }
+
+      h1 {
+        margin-top: 20px;
+        font-size: clamp(3.2rem, 8vw, 6.4rem);
+      }
+
+      h2 {
+        font-size: clamp(2.3rem, 4vw, 4rem);
+      }
+
+      h3 {
+        font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+      }
+
+      .lead {
+        margin: 22px 0 0;
+        max-width: 680px;
+        color: var(--muted);
+        font-size: 1.08rem;
+        line-height: 1.75;
+      }
+
+      .hero-actions,
+      .button-row {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+        margin-top: 30px;
+      }
+
+      .hero-metrics {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 12px;
+        margin-top: 34px;
+      }
+
+      .metric {
+        padding: 18px;
+        border-radius: 20px;
+        background: rgba(255, 252, 249, 0.68);
+        border: 1px solid rgba(77, 47, 28, 0.1);
+      }
+
+      .metric strong {
+        display: block;
+        font-size: 1.4rem;
+        margin-bottom: 6px;
+      }
+
+      .metric span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .hero-visual {
+        min-height: 100%;
+        padding: 28px;
+        background:
+          linear-gradient(180deg, rgba(31, 18, 10, 0.82), rgba(31, 18, 10, 0.54)),
+          radial-gradient(circle at top, rgba(237, 181, 109, 0.28), transparent 34%),
+          linear-gradient(160deg, #352113 0%, #5b3115 44%, #c3682a 100%);
+        color: #fff4e7;
+      }
+
+      .visual-frame {
+        display: grid;
+        grid-template-rows: auto 1fr auto;
+        min-height: 100%;
+        gap: 22px;
+      }
+
+      .visual-topline,
+      .visual-bottomline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: rgba(255, 244, 231, 0.72);
+        font-size: 0.88rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .visual-skyline {
+        position: relative;
+        border-radius: 28px;
+        min-height: 420px;
+        overflow: hidden;
+        background:
+          radial-gradient(circle at 50% 12%, rgba(255, 214, 157, 0.85), rgba(255, 197, 112, 0.08) 26%, transparent 30%),
+          linear-gradient(180deg, rgba(252, 217, 161, 0.95), rgba(224, 147, 87, 0.75) 36%, rgba(103, 53, 26, 0.92) 82%);
+      }
+
+      .visual-skyline::before {
+        content: "";
+        position: absolute;
+        inset: auto 0 0;
+        height: 38%;
+        background:
+          radial-gradient(circle at 20% 35%, rgba(34, 20, 12, 0.9) 0 22%, transparent 23%),
+          radial-gradient(circle at 76% 35%, rgba(34, 20, 12, 0.92) 0 18%, transparent 19%),
+          linear-gradient(180deg, transparent 0 28%, #23150d 28%);
+      }
+
+      .visual-skyline::after {
+        content: "";
+        position: absolute;
+        left: 50%;
+        top: 18%;
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        transform: translateX(-50%);
+        border: 1px solid rgba(255, 244, 231, 0.42);
+        box-shadow:
+          0 0 0 18px rgba(255, 244, 231, 0.08),
+          0 0 0 42px rgba(255, 244, 231, 0.04);
+      }
+
+      .floating-panel {
+        position: absolute;
+        display: grid;
+        gap: 8px;
+        padding: 18px;
+        border: 1px solid rgba(255, 244, 231, 0.18);
+        border-radius: 22px;
+        background: rgba(26, 16, 9, 0.42);
+        backdrop-filter: blur(12px);
+        box-shadow: 0 18px 34px rgba(8, 5, 3, 0.24);
+      }
+
+      .floating-panel strong {
+        font-size: 1.15rem;
+      }
+
+      .floating-panel span {
+        color: rgba(255, 244, 231, 0.76);
+        line-height: 1.55;
+        font-size: 0.9rem;
+      }
+
+      .panel-one {
+        right: 22px;
+        top: 22px;
+        width: 190px;
+      }
+
+      .panel-two {
+        left: 22px;
+        bottom: 26px;
+        width: 210px;
+      }
+
+      .section {
+        padding: 26px 0;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 18px;
+        margin-bottom: 22px;
+      }
+
+      .section-head p {
+        max-width: 520px;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .grid-2,
+      .grid-3,
+      .grid-4 {
+        display: grid;
+        gap: 18px;
+      }
+
+      .grid-2 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .grid-3 {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .grid-4 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+
+      .card {
+        padding: 28px;
+        border: 1px solid rgba(84, 52, 29, 0.14);
+        border-radius: var(--radius-md);
+        background: rgba(255, 250, 245, 0.72);
+        box-shadow: 0 16px 34px rgba(74, 44, 20, 0.08);
+      }
+
+      .card p,
+      .card li {
+        color: var(--muted);
+        line-height: 1.7;
+      }
+
+      .card ul {
+        margin: 14px 0 0;
+        padding-left: 18px;
+      }
+
+      .service-card {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+        min-height: 100%;
+      }
+
+      .service-icon {
+        width: 52px;
+        height: 52px;
+        display: grid;
+        place-items: center;
+        border-radius: 18px;
+        background: linear-gradient(135deg, rgba(201, 105, 47, 0.18), rgba(237, 181, 109, 0.26));
+        font-size: 1.4rem;
+      }
+
+      .split-feature {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+
+      .feature-panel {
+        padding: 32px;
+        min-height: 320px;
+      }
+
+      .dark-panel {
+        background:
+          linear-gradient(180deg, rgba(32, 20, 11, 0.9), rgba(56, 30, 13, 0.9)),
+          linear-gradient(135deg, rgba(201, 105, 47, 0.15), transparent);
+        color: #fff4e7;
+      }
+
+      .dark-panel p,
+      .dark-panel li,
+      .dark-panel .muted-light {
+        color: rgba(255, 244, 231, 0.76);
+      }
+
+      .dark-panel ul {
+        padding-left: 18px;
+        line-height: 1.7;
+      }
+
+      .badge-row,
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .badge,
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 999px;
+        font-size: 0.9rem;
+      }
+
+      .badge {
+        background: rgba(255, 252, 248, 0.74);
+        border: 1px solid rgba(66, 38, 19, 0.1);
+        color: var(--text);
+      }
+
+      .tag {
+        background: rgba(201, 105, 47, 0.09);
+        color: var(--primary-deep);
+      }
+
+      .portfolio-card {
+        overflow: hidden;
+        padding: 0;
+      }
+
+      .portfolio-visual {
+        min-height: 240px;
+        padding: 22px;
+        display: flex;
+        align-items: end;
+        background-size: cover;
+        background-position: center;
+      }
+
+      .portfolio-one {
+        background:
+          linear-gradient(180deg, rgba(14, 12, 11, 0.12), rgba(14, 12, 11, 0.72)),
+          linear-gradient(140deg, #f5d18e 0%, #d47d35 52%, #5d3119 100%);
+      }
+
+      .portfolio-two {
+        background:
+          linear-gradient(180deg, rgba(15, 12, 9, 0.18), rgba(15, 12, 9, 0.72)),
+          linear-gradient(140deg, #f0e5cf 0%, #d8ad79 44%, #5c3620 100%);
+      }
+
+      .portfolio-three {
+        background:
+          linear-gradient(180deg, rgba(20, 15, 12, 0.12), rgba(20, 15, 12, 0.72)),
+          linear-gradient(135deg, #ecd8b4 0%, #c8692f 46%, #2c1d14 100%);
+      }
+
+      .portfolio-four {
+        background:
+          linear-gradient(180deg, rgba(15, 12, 9, 0.12), rgba(15, 12, 9, 0.72)),
+          linear-gradient(135deg, #e2ccad 0%, #bc6b39 50%, #3d2718 100%);
+      }
+
+      .portfolio-content {
+        padding: 24px;
+      }
+
+      .before-after {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .before-after div {
+        padding: 18px;
+        border-radius: 18px;
+        min-height: 140px;
+        display: flex;
+        align-items: end;
+        font-weight: 700;
+      }
+
+      .before {
+        background: linear-gradient(180deg, rgba(165, 141, 120, 0.55), rgba(105, 84, 66, 0.78));
+        color: #fff8ee;
+      }
+
+      .after {
+        background: linear-gradient(180deg, rgba(255, 202, 140, 0.7), rgba(201, 105, 47, 0.95));
+        color: #fff8ee;
+      }
+
+      .pricing-card {
+        position: relative;
+      }
+
+      .pricing-card.featured {
+        transform: translateY(-10px);
+        background: linear-gradient(180deg, rgba(255, 246, 235, 0.94), rgba(249, 234, 215, 0.94));
+      }
+
+      .pricing-kicker {
+        color: var(--primary-deep);
+        font-size: 0.84rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .price {
+        margin-top: 16px;
+        font-size: 2.3rem;
+        font-weight: 800;
+      }
+
+      .price small {
+        font-size: 1rem;
+        font-weight: 600;
+        color: var(--muted);
+      }
+
+      .checklist {
+        display: grid;
+        gap: 12px;
+        margin-top: 22px;
+      }
+
+      .checklist span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--muted);
+      }
+
+      .checklist span::before {
+        content: "•";
+        color: var(--primary);
+        font-size: 1.2rem;
+      }
+
+      .contact-layout {
+        display: grid;
+        grid-template-columns: 0.95fr 1.05fr;
+        gap: 18px;
+      }
+
+      .contact-list {
+        display: grid;
+        gap: 14px;
+        margin-top: 24px;
+      }
+
+      .contact-item {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        padding: 18px;
+        border-radius: 18px;
+        background: rgba(255, 251, 247, 0.72);
+        border: 1px solid rgba(84, 52, 29, 0.12);
+      }
+
+      .contact-item span {
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+        margin-top: 24px;
+      }
+
+      .info-block {
+        padding: 22px;
+        border-radius: 22px;
+        background: rgba(30, 19, 12, 0.86);
+        color: #fff4e7;
+      }
+
+      .info-block p {
+        color: rgba(255, 244, 231, 0.76);
+      }
+
+      .service-area {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 20px;
+      }
+
+      .service-area span {
+        padding: 11px 14px;
+        border-radius: 999px;
+        background: rgba(255, 250, 244, 0.74);
+        border: 1px solid rgba(84, 52, 29, 0.12);
+      }
+
+      .cta-band {
+        padding: 36px;
+      }
+
+      .footer {
+        padding: 10px 0 34px;
+        color: var(--muted);
+      }
+
+      .footer-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 18px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(84, 52, 29, 0.12);
+      }
+
+      .reveal {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (max-width: 1024px) {
+        .hero,
+        .contact-layout,
+        .split-feature,
+        .grid-4 {
+          grid-template-columns: 1fr;
+        }
+
+        .grid-3,
+        .grid-2,
+        .info-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-copy,
+        .hero-visual,
+        .feature-panel,
+        .cta-band {
+          padding: 28px;
+        }
+
+        .pricing-card.featured {
+          transform: none;
+        }
+      }
+
+      @media (max-width: 860px) {
+        .topbar {
+          top: 10px;
+        }
+
+        .nav {
+          border-radius: 28px;
+          align-items: start;
+          flex-wrap: wrap;
+        }
+
+        .mobile-toggle {
+          display: inline-grid;
+          place-items: center;
+        }
+
+        .nav-links,
+        .nav-cta {
+          display: none;
+        }
+
+        .nav.open .nav-links,
+        .nav.open .nav-cta {
+          display: flex;
+          width: 100%;
+        }
+
+        .nav.open .nav-links {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .nav.open .nav-links a,
+        .nav.open .nav-cta {
+          justify-content: center;
+        }
+
+        .hero-copy {
+          padding: 32px 24px;
+        }
+
+        .hero-metrics {
+          grid-template-columns: 1fr;
+        }
+
+        .section-head,
+        .footer-inner {
+          flex-direction: column;
+          align-items: start;
+        }
+
+        .before-after {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav" data-nav>
+          <a class="brand" href="#top">
+            <div class="brand-mark">✦</div>
+            <div class="brand-text">
+              <span class="brand-name">Desert Sky Media</span>
+              <span class="brand-tag">From Sky to Screen</span>
+            </div>
+          </a>
+
+          <button class="mobile-toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+          </button>
+
+          <div class="nav-links">
+            <a href="#top">Home</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#pricing">Pricing</a>
+            <a href="#contact">Contact</a>
+          </div>
+
+          <a class="nav-cta" href="#contact">Get a Quote</a>
+        </nav>
+      </header>
+
+      <main id="top">
+        <section class="hero">
+          <div class="hero-card hero-copy reveal">
+            <div class="eyebrow">Arizona Media Production</div>
+            <h1>Elevate Your Brand with Professional Media</h1>
+            <p class="lead">
+              Photo. Video. Drone. Social Media. We help businesses stand out, grow faster,
+              and convert more customers with cinematic content built to perform.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button" href="#contact">Get a Quote</a>
+              <a class="button secondary" href="#portfolio">View Portfolio</a>
+            </div>
+
+            <div class="hero-metrics">
+              <div class="metric">
+                <strong>24–48 hrs</strong>
+                <span>Fast turnaround for listings, launches, and campaign-ready content.</span>
+              </div>
+              <div class="metric">
+                <strong>FAA Part 107</strong>
+                <span>Certified drone coverage for real estate, brands, and commercial projects.</span>
+              </div>
+              <div class="metric">
+                <strong>Arizona-Based</strong>
+                <span>Local market knowledge across Phoenix, Scottsdale, Mesa, and beyond.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-card hero-visual reveal">
+            <div class="visual-frame">
+              <div class="visual-topline">
+                <span>Desert Sky Media</span>
+                <span>Content That Converts</span>
+              </div>
+
+              <div class="visual-skyline">
+                <div class="floating-panel panel-one">
+                  <strong>Drone First</strong>
+                  <span>Standout aerial footage for listings, construction, landscapes, and branded campaigns.</span>
+                </div>
+                <div class="floating-panel panel-two">
+                  <strong>Built for growth</strong>
+                  <span>Short-form edits, brand visuals, and strategy that turn attention into action.</span>
+                </div>
+              </div>
+
+              <div class="visual-bottomline">
+                <span>Photo / Video / Social</span>
+                <span>Phoenix, Scottsdale, Prescott</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="about">
+          <div class="split-feature">
+            <div class="glass-card feature-panel reveal">
+              <div class="section-head">
+                <div>
+                  <div class="eyebrow">About</div>
+                  <h2>Professional media with a sharp local edge.</h2>
+                </div>
+              </div>
+              <p class="lead">
+                Desert Sky Media is a full-service media production company specializing in
+                high-quality photography, videography, drone content, and social media marketing.
+              </p>
+              <p class="lead">
+                We help businesses, creators, and brands capture attention, tell their story,
+                and grow their audience through powerful visual content. Whether you're a real
+                estate agent, small business owner, or content creator, we deliver fast,
+                professional media designed to get results.
+              </p>
+              <div class="badge-row">
+                <span class="badge">Operating in Arizona</span>
+                <span class="badge">Media consulting, editing, and production</span>
+                <span class="badge">Brand and influencer growth support</span>
+              </div>
+            </div>
+
+            <div class="glass-card feature-panel dark-panel reveal">
+              <div class="eyebrow">Why Choose Desert Sky Media</div>
+              <h2>Fast, cinematic, and built to convert.</h2>
+              <ul>
+                <li>Quick 24–48 hour turnaround that keeps your marketing moving.</li>
+                <li>High-end visuals for websites, listings, launches, and social campaigns.</li>
+                <li>FAA Part 107 certified drone pilot for legal, professional aerial work.</li>
+                <li>Affordable, flexible options for small businesses and creators.</li>
+                <li>Arizona-based insight into local neighborhoods, venues, and audiences.</li>
+              </ul>
+              <div class="tag-row">
+                <span class="tag">Real estate ready</span>
+                <span class="tag">Short-form specialists</span>
+                <span class="tag">Commercial quality</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="services">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Services</div>
+              <h2>Everything you need to capture attention.</h2>
+            </div>
+            <p>
+              Your biggest differentiator is drone, but the strongest client result comes from
+              combining sky, ground, and social-ready edits into one polished content system.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card service-card reveal">
+              <div class="service-icon">📸</div>
+              <div>
+                <h3>Photography</h3>
+                <p>Real estate photography, business branding photos, product photography, and event coverage that looks elevated and usable immediately.</p>
+                <ul>
+                  <li>Real estate photography</li>
+                  <li>Business branding photos</li>
+                  <li>Product photography</li>
+                  <li>Event coverage</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card service-card reveal">
+              <div class="service-icon">🎬</div>
+              <div>
+                <h3>Videography</h3>
+                <p>Promotional videos, business commercials, events, and short-form content for Reels, TikTok, and Shorts.</p>
+                <ul>
+                  <li>Promotional videos</li>
+                  <li>Social media content</li>
+                  <li>Business commercials</li>
+                  <li>Event videography</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card service-card reveal">
+              <div class="service-icon">🚁</div>
+              <div>
+                <h3>Drone Services</h3>
+                <p>Aerial real estate shots, fly-throughs, construction progress, and cinematic landscapes from an FAA Part 107 certified pilot.</p>
+                <ul>
+                  <li>Aerial real estate shots</li>
+                  <li>Property fly-throughs</li>
+                  <li>Construction progress</li>
+                  <li>Landscape & cinematic footage</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card service-card reveal">
+              <div class="service-icon">📱</div>
+              <div>
+                <h3>Social Media Growth</h3>
+                <p>Content strategy, posting guidance, short-form editing, and monetization-minded media planning.</p>
+                <ul>
+                  <li>Content creation strategy</li>
+                  <li>Short-form video editing</li>
+                  <li>Posting strategy</li>
+                  <li>Brand partnerships & monetization guidance</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card service-card reveal">
+              <div class="service-icon">🎞️</div>
+              <div>
+                <h3>Editing & Media Services</h3>
+                <p>Photo retouching, color grading, video editing, and optimization that gives every asset a polished finish.</p>
+                <ul>
+                  <li>Video editing</li>
+                  <li>Photo editing</li>
+                  <li>Color grading</li>
+                  <li>Content optimization</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="card service-card reveal">
+              <div class="service-icon">💼</div>
+              <div>
+                <h3>Who We Work With</h3>
+                <p>Real estate agents, small businesses, restaurants, influencers, creators, events, and growth-focused local brands.</p>
+                <ul>
+                  <li>Real estate agents</li>
+                  <li>Small businesses</li>
+                  <li>Restaurants</li>
+                  <li>Influencers & creators</li>
+                  <li>Events & brands</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="portfolio">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Portfolio</div>
+              <h2>Work that makes people stop scrolling.</h2>
+            </div>
+            <p>
+              Showcasing drone visuals, before-and-after transformations, short-form edits, and
+              real estate media helps clients picture what you can do for their brand.
+            </p>
+          </div>
+
+          <div class="grid-4">
+            <article class="card portfolio-card reveal">
+              <div class="portfolio-visual portfolio-one">
+                <span class="badge">Drone shots</span>
+              </div>
+              <div class="portfolio-content">
+                <h3>Luxury Listing Flyover</h3>
+                <p>Aerial angles designed to elevate curb appeal and help properties stand out online.</p>
+              </div>
+            </article>
+
+            <article class="card portfolio-card reveal">
+              <div class="portfolio-visual portfolio-two">
+                <span class="badge">Before / after</span>
+              </div>
+              <div class="portfolio-content">
+                <h3>Editing Transformation</h3>
+                <p>Color, clarity, and composition improvements that turn raw footage into polished content.</p>
+              </div>
+            </article>
+
+            <article class="card portfolio-card reveal">
+              <div class="portfolio-visual portfolio-three">
+                <span class="badge">Short-form video</span>
+              </div>
+              <div class="portfolio-content">
+                <h3>Social Campaign Cutdowns</h3>
+                <p>Vertical edits built for engagement, reach, and consistent posting across platforms.</p>
+              </div>
+            </article>
+
+            <article class="card portfolio-card reveal">
+              <div class="portfolio-visual portfolio-four">
+                <span class="badge">Real estate clips</span>
+              </div>
+              <div class="portfolio-content">
+                <h3>Property Walkthroughs</h3>
+                <p>Interior, exterior, and drone footage combined into smooth, high-converting listing media.</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="grid-2" style="margin-top: 18px;">
+            <article class="card reveal">
+              <div class="eyebrow">Before / After</div>
+              <h3>Transformations that show your editing value.</h3>
+              <p>
+                Before-and-after examples make your editing work tangible. They help clients understand why
+                professional media creates stronger first impressions and better performance.
+              </p>
+              <div class="before-after">
+                <div class="before">Before: flat, ungraded, unoptimized</div>
+                <div class="after">After: vibrant, cinematic, conversion-ready</div>
+              </div>
+            </article>
+
+            <article class="card reveal">
+              <div class="eyebrow">What To Add Next</div>
+              <h3>Use real results to win clients faster.</h3>
+              <div class="checklist">
+                <span>Drone shots of houses, buildings, and landscapes</span>
+                <span>Before-and-after edits that prove your finishing quality</span>
+                <span>Short-form videos with view, reach, or engagement metrics</span>
+                <span>Real estate walkthroughs and polished social cutdowns</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="pricing">
+          <div class="section-head reveal">
+            <div>
+              <div class="eyebrow">Pricing</div>
+              <h2>Simple packages that make selling easy.</h2>
+            </div>
+            <p>
+              The structure is ready now, and you can drop in exact rates later without changing
+              the design or layout.
+            </p>
+          </div>
+
+          <div class="grid-3">
+            <article class="card pricing-card reveal">
+              <div class="pricing-kicker">Basic Package</div>
+              <h3>Fast visual essentials</h3>
+              <div class="price">Starting at $___</div>
+              <div class="checklist">
+                <span>Photos OR short video</span>
+                <span>10–15 edited shots</span>
+                <span>Great for quick listings and small campaigns</span>
+              </div>
+            </article>
+
+            <article class="card pricing-card featured reveal">
+              <div class="pricing-kicker">Pro Package</div>
+              <h3>The signature combo</h3>
+              <div class="price">Starting at $___</div>
+              <div class="checklist">
+                <span>Photos + video + drone</span>
+                <span>Social clips included</span>
+                <span>Best fit for brands that want more reach</span>
+              </div>
+            </article>
+
+            <article class="card pricing-card reveal">
+              <div class="pricing-kicker">Premium Package</div>
+              <h3>Full media bundle</h3>
+              <div class="price">Starting at $___</div>
+              <div class="checklist">
+                <span>Drone + edits + content strategy</span>
+                <span>Campaign-ready asset delivery</span>
+                <span>For launches, growth pushes, and premium listings</span>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="glass-card cta-band reveal">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">Service Area</div>
+                <h2>Serving Arizona businesses that want better media.</h2>
+              </div>
+              <p>
+                Phoenix, Scottsdale, Glendale, Tempe, Mesa, and Prescott. If your brand needs
+                stronger visuals, Desert Sky Media is ready to shoot.
+              </p>
+            </div>
+            <div class="service-area">
+              <span>Phoenix</span>
+              <span>Scottsdale</span>
+              <span>Glendale</span>
+              <span>Tempe</span>
+              <span>Mesa</span>
+              <span>Prescott</span>
+            </div>
+          </div>
+        </section>
+
+        <section class="section" id="contact">
+          <div class="contact-layout">
+            <div class="glass-card feature-panel reveal">
+              <div class="eyebrow">Contact</div>
+              <h2>Book your shoot today.</h2>
+              <p class="lead">
+                Ready to create stronger content for your brand, listing, or next campaign? Reach out
+                and Desert Sky Media can help plan the right shoot for your goals.
+              </p>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <strong>Call / Text</strong>
+                  <span>(your number)</span>
+                </div>
+                <div class="contact-item">
+                  <strong>Email</strong>
+                  <span>(your email)</span>
+                </div>
+                <div class="contact-item">
+                  <strong>Instagram</strong>
+                  <span>@desertskymedia</span>
+                </div>
+                <div class="contact-item">
+                  <strong>TikTok</strong>
+                  <span>@desertskymedia</span>
+                </div>
+              </div>
+              <div class="button-row">
+                <a class="button" href="tel:+1-000-000-0000">Call / Text</a>
+                <a class="button secondary" href="mailto:hello@desertskymedia.com">Email Us</a>
+              </div>
+            </div>
+
+            <div class="glass-card feature-panel dark-panel reveal">
+              <div class="eyebrow">Why People Book</div>
+              <h2>Capture attention. Grow faster.</h2>
+              <p class="muted-light">
+                Put drone front and center, show the quality jump in your edits, and make the quick
+                turnaround promise feel real. That combination is what closes local service clients.
+              </p>
+              <div class="checklist">
+                <span>FAA Part 107 certified drone pilot</span>
+                <span>High-quality visuals that convert</span>
+                <span>Affordable pricing for small businesses</span>
+                <span>Fast 24–48 hour turnaround</span>
+                <span>Arizona-based and tuned to the local market</span>
+              </div>
+              <div class="info-grid">
+                <div class="info-block">
+                  <h3>Best inquiry types</h3>
+                  <p>Real estate shoots, business branding, drone packages, event coverage, and short-form content.</p>
+                </div>
+                <div class="info-block">
+                  <h3>Final CTA</h3>
+                  <p>Use this section to push quote requests, call bookings, and direct social messages.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>
+            <strong>Desert Sky Media</strong>
+            <div>Professional photo, video, drone, and social content for Arizona brands.</div>
+          </div>
+          <div>Single-file website ready to upload.</div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      const nav = document.querySelector("[data-nav]");
+      const toggle = document.querySelector("[data-nav-toggle]");
+
+      if (toggle && nav) {
+        toggle.addEventListener("click", () => {
+          const expanded = nav.classList.toggle("open");
+          toggle.setAttribute("aria-expanded", String(expanded));
+        });
+      }
+
+      const reveals = document.querySelectorAll(".reveal");
+
+      const observer = new IntersectionObserver(
+        entries => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("visible");
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.15 }
+      );
+
+      reveals.forEach(block => observer.observe(block));
+    </script>
+  </body>
+</html>
