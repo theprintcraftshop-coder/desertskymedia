@@ -1,57 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Desert Sky Media | Contact</title>
-    <meta
-      name="description"
-      content="Contact Desert Sky Media for drone coverage, real estate media, web design, business content, and sports media across Arizona."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="topbar">
-        <nav class="nav" data-nav>
-          <a class="brand" href="index.html">
-            <div class="brand-mark">✦</div>
-            <div class="brand-text">
-              <span class="brand-name">Desert Sky Media</span>
-              <span class="brand-tag">From Sky to Screen</span>
-            </div>
-          </a>
-          <button class="mobile-toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">
-            <span></span>
-          </button>
-          <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="real-estate.html">Real Estate</a>
-            <a href="website.html">Website</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="pricing.html">Pricing</a>
-            <a class="current" href="contact.html">Contact</a>
-          </div>
-          <a class="nav-cta" href="contact.html">Get a Quote</a>
-        </nav>
-      </header>
-
-      <main>
-        <section class="section" id="contact">
           <div class="contact-layout">
             <div class="glass-card feature-panel reveal">
               <div class="eyebrow">Contact</div>
               <h2>Contact Desert Sky Media.</h2>
               <p class="lead">
-                Reach out for business media, real estate coverage, web design, or sports media.
-                Desert Sky Media can help you choose the right service for your project.
+                Reach out for business media, real estate coverage, web design, sports media, and
+                custom drone projects across Arizona.
               </p>
               <div class="contact-list">
                 <div class="contact-item">
@@ -78,29 +31,60 @@
             </div>
 
             <div class="glass-card feature-panel dark-panel reveal">
-              <div class="eyebrow">Why People Book</div>
-              <h2>Why clients choose Desert Sky Media.</h2>
+              <div class="eyebrow">Custom Quotes</div>
+              <h2>Contact us for longer shoots and custom projects.</h2>
               <p class="muted-light">
-                Clients value certified drone coverage, clear pricing, no travel fee, and a simple
-                process for booking the services they need.
+                Request a quote for concerts, construction coverage, fairs, extended drone
+                footage, multi-location shoots, or other custom media projects. Fill out the form
+                below and it will open an email draft addressed to Desert Sky Media.
               </p>
               <div class="checklist">
-                <span>FAA Part 107 certified drone videographer</span>
-                <span>One-year drone training through Central Arizona Valley Institute of Technology</span>
-                <span>No travel fee across the listed service area</span>
-                <span>Web design with no upfront fee and just $50 monthly</span>
-                <span>Professional visuals for real estate, sports, and local businesses</span>
+                <span>Concerts and live events</span>
+                <span>Construction progress and site coverage</span>
+                <span>Fairs, festivals, and longer drone shoots</span>
+                <span>Custom media requests based on your project</span>
               </div>
-              <div class="info-grid">
-                <div class="info-block">
-                  <h3>Best inquiry types</h3>
-                  <p>Real estate shoots, business branding, drone packages, sports coverage, and website setup.</p>
+
+              <form id="quote-form" class="contact-form" novalidate>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required />
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Your email" required />
+                  </div>
                 </div>
-                <div class="info-block">
-                  <h3>Best next step</h3>
-                  <p>Ask for the property address, shoot goal, or website need so you can quote the right package quickly.</p>
+
+                <div class="field">
+                  <label for="shootType">Project type</label>
+                  <select id="shootType" name="shootType" required>
+                    <option value="">Select a project type</option>
+                    <option value="Concert">Concert</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Fair or festival">Fair or festival</option>
+                    <option value="Extended drone coverage">Extended drone coverage</option>
+                    <option value="Custom shoot">Custom shoot</option>
+                  </select>
                 </div>
-              </div>
+
+                <div class="field">
+                  <label for="details">What do you need?</label>
+                  <textarea
+                    id="details"
+                    name="details"
+                    placeholder="Describe the shoot, location, timing, and the coverage you want."
+                    required
+                  ></textarea>
+                </div>
+
+                <button class="button" type="submit">Send Quote Request</button>
+                <div class="fine-print">
+                  This form opens your default email app with your details filled in and addressed to
+                  desertskymediaorg@gmail.com.
+                </div>
+              </form>
             </div>
           </div>
         </section>
@@ -110,7 +94,7 @@
             <div class="section-head">
               <div>
                 <div class="eyebrow">Service Area</div>
-                <h2>Serving Arizona businesses, listings, and athletes with no travel fee.</h2>
+                <h2>Serving Arizona businesses, listings, and events with no travel fee.</h2>
               </div>
               <p>
                 Phoenix, Scottsdale, Glendale, Tempe, Mesa, and Tucson. Desert Sky Media provides
