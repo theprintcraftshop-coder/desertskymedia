@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Desert Sky Media | Contact</title>
+    <meta
+      name="description"
+      content="Contact Desert Sky Media for drone photography, cinematography, aerial video, editing, and real estate media across Southern Arizona."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <nav class="nav" data-nav>
+          <a class="brand" href="index.html">
+            <div class="brand-mark">✦</div>
+            <div class="brand-text">
+              <span class="brand-name">Desert Sky Media</span>
+              <span class="brand-tag">From Sky to Screen</span>
+            </div>
+          </a>
+
+          <button class="mobile-toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">
+            <span></span>
+          </button>
+
+          <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="real-estate.html">Real Estate</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="pricing.html">Pricing</a>
+            <a class="current" href="contact.html">Contact</a>
+          </div>
+
+          <a class="nav-cta" href="contact.html">Get a Quote</a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-card hero-copy reveal">
+            <div class="eyebrow">Contact</div>
+            <h1>Let&apos;s talk about your next shoot.</h1>
+            <p class="lead">
+              Reach out for real estate listings, drone photography, aerial video, property
+              coverage, branded media, and custom projects across Southern Arizona.
+            </p>
+
+            <div class="hero-actions">
+              <a class="button" href="tel:+16023993847">Call / Text</a>
+              <a class="button secondary" href="mailto:desertskymediaorg@gmail.com">Email Us</a>
+            </div>
+          </div>
+
+          <div class="hero-card hero-copy reveal">
+            <div class="eyebrow">Direct Contact</div>
+            <div class="contact-list">
+              <div class="contact-item">
+                <strong>Phone</strong>
+                <span>(602) 399-3847</span>
+              </div>
+              <div class="contact-item">
+                <strong>Email</strong>
+                <span>desertskymediaorg@gmail.com</span>
+              </div>
+              <div class="contact-item">
+                <strong>Instagram</strong>
+                <span>@desertskymediaorg</span>
+              </div>
+              <div class="contact-item">
+                <strong>Travel Fee</strong>
+                <span>No travel fee within the listed service area.</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="glass-card cta-band reveal">
+            <div class="section-head">
+              <div>
+                <div class="eyebrow">Service Area</div>
+                <h2>Serving Southern Arizona with no travel fee.</h2>
+              </div>
+              <p>
+                Tucson, Oro Valley, Marana, Sahuarita, Green Valley, and Casa Grande. Desert Sky
+                Media provides professional drone and real estate media across the listed service
+                area with no travel fee.
+              </p>
+            </div>
+            <div class="service-area">
+              <span>Tucson</span>
+              <span>Oro Valley</span>
+              <span>Marana</span>
+              <span>Sahuarita</span>
+              <span>Green Valley</span>
+              <span>Casa Grande</span>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer-inner">
+          <div>
+            <strong>Desert Sky Media</strong>
+            <div>Professional drone photography, cinematography, aerial video, editing, and real estate media for Arizona brands and properties.</div>
+            <div>(602) 399-3847</div>
+          </div>
+          <div></div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
