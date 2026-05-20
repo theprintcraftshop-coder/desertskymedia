@@ -1,81 +1,89 @@
-  <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Desert Sky Media | Contact</title>
-    <meta
-      name="description"
-      content="Contact Desert Sky Media for real estate media, business content, sports coverage, and custom drone projects across Arizona."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <div class="site-shell">
-      <header class="topbar">
-        <nav class="nav" data-nav>
-          <a class="brand" href="index.html">
-            <div class="brand-mark">✦</div>
-            <div class="brand-text">
-              <span class="brand-name">Desert Sky Media</span>
-              <span class="brand-tag">From Sky to Screen</span>
-            </div>
-          </a>
-
-          <button class="mobile-toggle" data-nav-toggle aria-label="Toggle navigation" aria-expanded="false">
-            <span></span>
-          </button>
-
-          <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="services.html">Services</a>
-            <a href="real-estate.html">Real Estate</a>
-            <a href="website.html">Website</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="pricing.html">Pricing</a>
-            <a class="current" href="contact.html">Contact</a>
-          </div>
-
-          <a class="nav-cta" href="contact.html">Get a Quote</a>
-        </nav>
-      </header>
-
-      <main>
-        <section class="section" id="contact">
-          <div class="glass-card feature-panel reveal">
-            <div class="eyebrow">Contact</div>
-            <h2>Contact Desert Sky Media.</h2>
-            <p class="lead">
-              Reach out for business media, real estate coverage, web design, sports media, and
-              custom drone projects across Arizona.
-            </p>
-            <div class="contact-list">
-              <div class="contact-item">
-                <strong>Call / Text</strong>
-                <span>(602) 399-3847</span>
+            <div class="glass-card feature-panel reveal">
+              <div class="eyebrow">Contact</div>
+              <h2>Contact Desert Sky Media.</h2>
+              <p class="lead">
+                Reach out for drone photography, cinematography, aerial video, editing, real
+                estate media, and custom drone projects across Southern Arizona.
+              </p>
+              <div class="contact-list">
+                <div class="contact-item">
+                  <strong>Call / Text</strong>
+                  <span>(602) 399-3847</span>
+                </div>
+                <div class="contact-item">
+                  <strong>Email</strong>
+                  <span>desertskymediaorg@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                  <strong>Instagram</strong>
+                  <span>@desertskymediaorg</span>
+                </div>
+                <div class="contact-item">
+                  <strong>Travel Fee</strong>
+                  <span>No travel fee within the listed Arizona service area.</span>
+                </div>
               </div>
-              <div class="contact-item">
-                <strong>Email</strong>
-                <span>desertskymediaorg@gmail.com</span>
-              </div>
-              <div class="contact-item">
-                <strong>Instagram</strong>
-                <span>@desertskymediaorg</span>
-              </div>
-              <div class="contact-item">
-                <strong>Travel Fee</strong>
-                <span>No travel fee within the listed Arizona service area.</span>
+              <div class="button-row">
+                <a class="button" href="tel:+16023993847">Call / Text</a>
+                <a class="button secondary" href="mailto:desertskymediaorg@gmail.com">Email Us</a>
               </div>
             </div>
-            <div class="button-row">
-              <a class="button" href="tel:+16023993847">Call / Text</a>
-              <a class="button secondary" href="mailto:desertskymediaorg@gmail.com">Email Us</a>
+
+            <div class="glass-card feature-panel dark-panel reveal">
+              <div class="eyebrow">Custom Quotes</div>
+              <h2>Contact us for longer shoots and custom projects.</h2>
+              <p class="muted-light">
+                Request a quote for concerts, construction coverage, fairs, extended drone
+                footage, multi-location shoots, or other custom media projects. Fill out the form
+                below and it will open an email draft addressed to Desert Sky Media.
+              </p>
+              <div class="checklist">
+                <span>Concerts and live events</span>
+                <span>Construction progress and site coverage</span>
+                <span>Fairs, festivals, and longer drone shoots</span>
+                <span>Custom media requests based on your project</span>
+              </div>
+
+              <form id="quote-form" class="contact-form" novalidate>
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="name">Name</label>
+                    <input id="name" name="name" type="text" placeholder="Your name" required />
+                  </div>
+                  <div class="field">
+                    <label for="email">Email</label>
+                    <input id="email" name="email" type="email" placeholder="Your email" required />
+                  </div>
+                </div>
+
+                <div class="field">
+                  <label for="shootType">Project type</label>
+                  <select id="shootType" name="shootType" required>
+                    <option value="">Select a project type</option>
+                    <option value="Concert">Concert</option>
+                    <option value="Construction">Construction</option>
+                    <option value="Fair or festival">Fair or festival</option>
+                    <option value="Extended drone coverage">Extended drone coverage</option>
+                    <option value="Custom shoot">Custom shoot</option>
+                  </select>
+                </div>
+
+                <div class="field">
+                  <label for="details">What do you need?</label>
+                  <textarea
+                    id="details"
+                    name="details"
+                    placeholder="Describe the shoot, location, timing, and the coverage you want."
+                    required
+                  ></textarea>
+                </div>
+
+                <button class="button" type="submit">Send Quote Request</button>
+                <div class="fine-print">
+                  This form opens your default email app with your details filled in and addressed to
+                  desertskymediaorg@gmail.com.
+                </div>
+              </form>
             </div>
           </div>
         </section>
@@ -85,20 +93,21 @@
             <div class="section-head">
               <div>
                 <div class="eyebrow">Service Area</div>
-                <h2>Serving Arizona businesses, listings, and events with no travel fee.</h2>
+                <h2>Serving Southern Arizona with no travel fee.</h2>
               </div>
               <p>
-                Phoenix, Scottsdale, Glendale, Tempe, Mesa, and Tucson. Desert Sky Media provides
-                professional media across the listed Arizona service area with no travel fee.
+                Tucson, Oro Valley, Marana, Sahuarita, Green Valley, and Casa Grande. Desert Sky
+                Media provides professional drone and real estate media across the listed service
+                area with no travel fee.
               </p>
             </div>
             <div class="service-area">
-              <span>Phoenix</span>
-              <span>Scottsdale</span>
-              <span>Glendale</span>
-              <span>Tempe</span>
-              <span>Mesa</span>
               <span>Tucson</span>
+              <span>Oro Valley</span>
+              <span>Marana</span>
+              <span>Sahuarita</span>
+              <span>Green Valley</span>
+              <span>Casa Grande</span>
             </div>
           </div>
         </section>
@@ -108,7 +117,7 @@
         <div class="footer-inner">
           <div>
             <strong>Desert Sky Media</strong>
-            <div>Professional photo, video, drone, web design, real estate media, and sports media for Arizona brands.</div>
+            <div>Professional drone photography, cinematography, aerial video, editing, and real estate media for Arizona brands and properties.</div>
             <div>(602) 399-3847</div>
           </div>
           <div></div>
