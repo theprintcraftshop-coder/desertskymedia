@@ -1,195 +1,684 @@
-Create a full Construction Progress Photos service page.
+:root {
+  --bg: #f3ece1;
+  --surface: rgba(255, 248, 240, 0.72);
+  --text: #24170f;
+  --muted: #6f5a4a;
+  --line: rgba(50, 30, 18, 0.12);
+  --primary: #c9692f;
+  --primary-deep: #9d4514;
+  --shadow: 0 24px 70px rgba(72, 42, 20, 0.14);
+  --radius-lg: 32px;
+  --radius-md: 22px;
+  --max-width: 1180px;
+}
 
-Page title:
-Drone Construction Progress Photos
+* {
+  box-sizing: border-box;
+}
 
-Hero section:
-Headline:
-Track Your Construction Project From the Sky
+html {
+  scroll-behavior: smooth;
+}
 
-Subheadline:
-Professional drone photos and video for builders, contractors, developers, property owners, and project managers.
+body {
+  margin: 0;
+  font-family: "Manrope", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(237, 181, 109, 0.45), transparent 30%),
+    radial-gradient(circle at top right, rgba(201, 105, 47, 0.22), transparent 32%),
+    linear-gradient(180deg, #f7f0e6 0%, #f1e5d6 52%, #ead8c3 100%);
+  min-height: 100vh;
+}
 
-Hero buttons:
-Request Construction Photos
-View Packages
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 120px 120px;
+  mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.45), transparent 90%);
+  opacity: 0.35;
+}
 
-Intro section:
-Explain that drone construction progress photography gives contractors and builders a clear visual record of a project over time. Mention that consistent aerial photos help show progress, document site conditions, update clients, track milestones, create marketing content, and keep records.
+a {
+  color: inherit;
+  text-decoration: none;
+}
 
-Use wording like:
-Our construction progress photo service helps you document your project from start to finish with high-resolution aerial photos and video. Whether you need one-time site photos or recurring weekly or monthly updates, drone photography gives you a clean view of the full job site, building progress, materials, equipment, access roads, grading, roofing, framing, parking areas, and surrounding property.
+.site-shell {
+  width: min(calc(100% - 32px), var(--max-width));
+  margin: 0 auto;
+}
 
-Section: Who This Is For
-Create cards for:
-- General contractors
-- Home builders
-- Commercial builders
-- Developers
-- Project managers
-- Property owners
-- Architects and designers
-- Marketing teams
+.topbar {
+  position: sticky;
+  top: 18px;
+  z-index: 20;
+  padding-top: 18px;
+}
 
-Each card should have a short explanation.
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 14px 18px;
+  border: 1px solid rgba(83, 51, 30, 0.14);
+  border-radius: 999px;
+  background: rgba(251, 246, 239, 0.78);
+  box-shadow: 0 14px 40px rgba(63, 33, 16, 0.08);
+  backdrop-filter: blur(20px);
+}
 
-General contractors:
-Track job site progress and document work for internal updates and client communication.
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
 
-Home builders:
-Capture each stage of a residential build from grading to final completion.
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--primary), #efc276);
+  color: #fff8ee;
+  font-size: 18px;
+}
 
-Commercial builders:
-Document large sites, buildings, parking lots, roofing, exterior progress, and equipment layout.
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
 
-Developers:
-Show investors, partners, and stakeholders how the project is moving forward.
+.brand-name {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.45rem;
+  line-height: 1;
+  letter-spacing: 0.02em;
+}
 
-Project managers:
-Use consistent aerial photos to compare progress over time.
+.brand-tag {
+  color: var(--muted);
+  font-size: 0.8rem;
+}
 
-Property owners:
-Keep a clear visual record of the construction process.
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
 
-Marketing teams:
-Turn project progress into website, social media, and portfolio content.
+.nav-links a {
+  padding: 10px 14px;
+  border-radius: 999px;
+  color: var(--muted);
+  transition: 0.2s ease;
+}
 
-Section: What We Capture
-Use cards or bullets:
-- Full job site overview photos
-- Consistent repeat angles over time
-- Building progress
-- Grading and land development
-- Roofing and exterior progress
-- Parking lots and access roads
-- Equipment and material layout
-- Before, during, and after photos
-- Short aerial video clips
-- Social media content if requested
+.nav-links a:hover,
+.nav-links a.current {
+  background: rgba(201, 105, 47, 0.1);
+  color: var(--text);
+}
 
-Section: Construction Photo Packages
+.nav-links a.current {
+  font-weight: 700;
+}
 
-Create pricing cards:
+.button,
+.nav-cta,
+button.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border: 0;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-deep));
+  color: #fff7f0;
+  font-weight: 700;
+  box-shadow: 0 16px 30px rgba(157, 69, 20, 0.26);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
 
-One-Time Site Visit
-Price: Starting at $249
-Includes:
-- 20 to 40 high-resolution aerial photos
-- 5 to 10 short video clips
-- Full site overview
-- Key progress angles
-- Online delivery
-Best for quick updates, small builds, and one-time documentation.
+.button:hover,
+.nav-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 34px rgba(157, 69, 20, 0.32);
+}
 
-Monthly Progress Package
-Price: Starting at $499/month
-Includes:
-- 2 drone visits per month
-- Consistent repeat angles
-- Edited high-resolution photos
-- Short video clips
-- Organized monthly folders
-- Great for client updates and project records
+.button.secondary {
+  background: rgba(255, 250, 244, 0.78);
+  color: var(--text);
+  border: 1px solid rgba(64, 36, 19, 0.12);
+  box-shadow: none;
+}
 
-Weekly Progress Package
-Price: Starting at $999/month
-Includes:
-- 4 drone visits per month
-- Consistent weekly progress photos
-- Repeat angles for comparison
-- Full site documentation
-- Photo and video delivery
-- Best for active construction sites and contractors
+.mobile-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: rgba(255, 248, 240, 0.8);
+}
 
-Large Site / Commercial Project
-Price: Custom Quote
-Includes:
-- Large construction sites
-- Multi-building developments
-- Commercial properties
-- Extended flight time
-- Custom shot lists
-- Stakeholder-ready deliverables
+.mobile-toggle span,
+.mobile-toggle::before,
+.mobile-toggle::after {
+  content: "";
+  display: block;
+  width: 18px;
+  height: 2px;
+  margin: 0 auto;
+  background: var(--text);
+  border-radius: 999px;
+}
 
-Make the Monthly Progress Package the featured/popular package.
+.mobile-toggle::before {
+  margin-bottom: 4px;
+}
 
-Section: Why Construction Companies Use Drone Progress Photos
-Explain that aerial progress photography helps construction companies communicate better, reduce confusion, document progress, and create professional content.
+.mobile-toggle::after {
+  margin-top: 4px;
+}
 
-Cards:
-- Clear project documentation
-- Better client updates
-- Visual proof of progress
-- Consistent timeline records
-- Useful for marketing
-- Helps show scale and site layout
-- Great for investors and stakeholders
+main {
+  padding-bottom: 70px;
+}
 
-Section: How It Works
-Create 4 steps:
-1. Tell us about the project
-Customer shares the site location, project type, schedule, and what needs to be captured.
+.section {
+  padding: 26px 0;
+}
 
-2. Choose one-time or recurring coverage
-Customer chooses a single visit, monthly package, weekly package, or custom schedule.
+.hero {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 28px;
+  align-items: stretch;
+  padding: 52px 0 32px;
+}
 
-3. Drone capture
-We safely capture aerial photos and video from planned angles.
+.hero-card,
+.glass-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(84, 52, 29, 0.14);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(18px);
+}
 
-4. Organized delivery
-Files are delivered in organized folders by date, making it easy to track progress over time.
+.hero-copy,
+.feature-panel,
+.cta-band {
+  padding: 32px;
+}
 
-Section: Recurring Progress Documentation
-Create a section explaining that recurring construction photos are best when captured from the same angles every visit.
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(255, 251, 246, 0.7);
+  color: var(--muted);
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
 
-Text:
-For ongoing construction projects, we can capture repeat angles from similar positions each visit. This creates a clean visual timeline of your project so you can compare progress week by week or month by month.
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 6px rgba(201, 105, 47, 0.12);
+}
 
-Mention:
-- Same angle comparisons
-- Monthly folders
-- Before/during/after views
-- Useful for client updates
-- Useful for portfolio and marketing content
+h1,
+h2,
+h3,
+.page-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
 
-Section: Add-ons
-Create add-on list:
-- Same-day delivery: +$75
-- 24-hour delivery: +$50
-- Edited 30 to 60 second project video: +$150 to $300
-- Vertical social media reel: +$75 to $150
-- Extra edited photos: +$5 each
-- Extra site visit: quoted
-- Travel outside service area: quoted or mileage-based
-- Custom shot list: included or quoted depending on project size
+h1 {
+  margin-top: 20px;
+  font-size: clamp(3rem, 7vw, 6rem);
+}
 
-Section: Safety and Flight Requirements
-Add a professional safety section:
-All drone flights are planned around weather, site safety, airspace, people, equipment, and FAA operating requirements. Some locations may require airspace authorization or additional planning. Flights may need to be rescheduled due to unsafe weather, restricted airspace, or active site conditions.
+h2 {
+  font-size: clamp(2.2rem, 4vw, 4rem);
+}
 
-Section: FAQ
+h3 {
+  font-size: clamp(1.5rem, 2vw, 2.1rem);
+}
 
-Q: How often should construction progress photos be taken?
-A: For most projects, monthly photos are enough for general updates. Weekly photos are better for active job sites, fast-moving builds, or projects where clients and stakeholders need frequent updates.
+.page-title {
+  margin-top: 20px;
+  font-size: clamp(2.5rem, 5vw, 4.6rem);
+}
 
-Q: Can you take photos from the same angles every time?
-A: Yes. Recurring packages can include repeat angles so the project can be compared over time.
+.lead {
+  margin: 22px 0 0;
+  max-width: 680px;
+  color: var(--muted);
+  font-size: 1.05rem;
+  line-height: 1.75;
+}
 
-Q: Do you offer video too?
-A: Yes. Short video clips can be included, and edited project videos or social media reels can be added.
+.hero-actions,
+.button-row {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
 
-Q: Can this be used for marketing?
-A: Yes. Construction progress photos and videos are great for websites, social media, client updates, investor updates, and project portfolios.
+.hero-metrics,
+.grid-2,
+.grid-3,
+.grid-4,
+.info-grid,
+.summary-grid {
+  display: grid;
+  gap: 18px;
+}
 
-Q: Can you fly over an active construction site?
-A: Flights depend on safety, people on site, equipment movement, airspace, weather, and FAA requirements. Some sites may require coordination before flying.
+.hero-metrics,
+.grid-3,
+.summary-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
 
-Final call-to-action:
-Headline:
-Document Your Project From Start to Finish
+.grid-2,
+.contact-layout {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
-Text:
-Get professional aerial construction progress photos for your next build, job site, or development project.
+.grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
 
-Button:
-Request Construction Progress Photos
+.split-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.metric,
+.card,
+.contact-item {
+  padding: 18px;
+  border-radius: 20px;
+  background: rgba(255, 252, 249, 0.68);
+  border: 1px solid rgba(77, 47, 28, 0.1);
+}
+
+.card {
+  padding: 28px;
+  border-radius: var(--radius-md);
+  box-shadow: 0 16px 34px rgba(74, 44, 20, 0.08);
+}
+
+.metric strong {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.metric span,
+.card p,
+.card li,
+.contact-item span {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.card ul {
+  margin: 14px 0 0;
+  padding-left: 18px;
+}
+
+.dark-panel {
+  background:
+    linear-gradient(180deg, rgba(32, 20, 11, 0.9), rgba(56, 30, 13, 0.9)),
+    linear-gradient(135deg, rgba(201, 105, 47, 0.15), transparent);
+  color: #fff4e7;
+}
+
+.dark-panel p,
+.dark-panel li,
+.dark-panel .muted-light,
+.dark-panel .checklist span {
+  color: rgba(255, 244, 231, 0.8);
+}
+
+.dark-panel .metric {
+  background: rgba(255, 248, 240, 0.14);
+  border-color: rgba(255, 244, 231, 0.14);
+}
+
+.dark-panel .metric span {
+  color: rgba(255, 244, 231, 0.78);
+}
+
+.badge-row,
+.tag-row,
+.service-area {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.badge,
+.tag,
+.service-area span {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+}
+
+.badge,
+.service-area span {
+  background: rgba(255, 252, 248, 0.74);
+  border: 1px solid rgba(66, 38, 19, 0.1);
+  color: var(--text);
+}
+
+.tag {
+  background: rgba(201, 105, 47, 0.09);
+  color: var(--primary-deep);
+}
+
+.portfolio-card {
+  overflow: hidden;
+  padding: 0;
+}
+
+.portfolio-visual {
+  min-height: 240px;
+  padding: 22px;
+  display: flex;
+  align-items: end;
+}
+
+.portfolio-one {
+  background:
+    linear-gradient(180deg, rgba(14, 12, 11, 0.12), rgba(14, 12, 11, 0.72)),
+    linear-gradient(140deg, #f5d18e 0%, #d47d35 52%, #5d3119 100%);
+}
+
+.portfolio-two {
+  background:
+    linear-gradient(180deg, rgba(15, 12, 9, 0.18), rgba(15, 12, 9, 0.72)),
+    linear-gradient(140deg, #f0e5cf 0%, #d8ad79 44%, #5c3620 100%);
+}
+
+.portfolio-three {
+  background:
+    linear-gradient(180deg, rgba(20, 15, 12, 0.12), rgba(20, 15, 12, 0.72)),
+    linear-gradient(135deg, #ecd8b4 0%, #c8692f 46%, #2c1d14 100%);
+}
+
+.portfolio-four {
+  background:
+    linear-gradient(180deg, rgba(15, 12, 9, 0.12), rgba(15, 12, 9, 0.72)),
+    linear-gradient(135deg, #e2ccad 0%, #bc6b39 50%, #3d2718 100%);
+}
+
+.portfolio-content {
+  padding: 24px;
+}
+
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.before-after div {
+  padding: 18px;
+  border-radius: 18px;
+  min-height: 140px;
+  display: flex;
+  align-items: end;
+  font-weight: 700;
+}
+
+.before {
+  background: linear-gradient(180deg, rgba(165, 141, 120, 0.55), rgba(105, 84, 66, 0.78));
+  color: #fff8ee;
+}
+
+.after {
+  background: linear-gradient(180deg, rgba(255, 202, 140, 0.7), rgba(201, 105, 47, 0.95));
+  color: #fff8ee;
+}
+
+.pricing-card.featured {
+  background: linear-gradient(180deg, rgba(255, 246, 235, 0.94), rgba(249, 234, 215, 0.94));
+}
+
+.pricing-kicker {
+  color: var(--primary-deep);
+  font-size: 0.84rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.price {
+  margin-top: 16px;
+  font-size: 2.3rem;
+  font-weight: 800;
+}
+
+.price small {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--muted);
+}
+
+.checklist {
+  display: grid;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.checklist span {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.checklist span::before {
+  content: "â€¢";
+  color: var(--primary);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.footer {
+  padding: 10px 0 34px;
+  color: var(--muted);
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(84, 52, 29, 0.12);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field label {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: rgba(255, 244, 231, 0.9);
+}
+
+.light-form .field label {
+  color: var(--text);
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 244, 231, 0.18);
+  border-radius: 16px;
+  padding: 14px 16px;
+  font: inherit;
+  color: #fff4e7;
+  background: rgba(255, 248, 240, 0.08);
+}
+
+.light-form .field input,
+.light-form .field select,
+.light-form .field textarea {
+  border: 1px solid rgba(77, 47, 28, 0.12);
+  color: var(--text);
+  background: rgba(255, 252, 249, 0.85);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: rgba(255, 244, 231, 0.55);
+}
+
+.light-form .field input::placeholder,
+.light-form .field textarea::placeholder {
+  color: var(--muted);
+}
+
+.field textarea {
+  min-height: 140px;
+  resize: vertical;
+}
+
+.fine-print {
+  color: rgba(255, 244, 231, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.light-form .fine-print {
+  color: var(--muted);
+}
+
+@media (max-width: 1024px) {
+  .hero,
+  .contact-layout,
+  .split-feature,
+  .grid-4,
+  .grid-3,
+  .grid-2,
+  .info-grid,
+  .summary-grid,
+  .hero-metrics,
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    top: 10px;
+  }
+
+  .nav {
+    border-radius: 28px;
+    align-items: start;
+    flex-wrap: wrap;
+  }
+
+  .mobile-toggle {
+    display: inline-grid;
+    place-items: center;
+  }
+
+  .nav-links,
+  .nav-cta {
+    display: none;
+  }
+
+  .nav.open .nav-links,
+  .nav.open .nav-cta {
+    display: flex;
+    width: 100%;
+  }
+
+  .nav.open .nav-links {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .nav.open .nav-links a,
+  .nav.open .nav-cta {
+    justify-content: center;
+  }
+
+  .section-head,
+  .footer-inner {
+    flex-direction: column;
+    align-items: start;
+  }
+
+  .before-after {
+    grid-template-columns: 1fr;
+  }
+}
