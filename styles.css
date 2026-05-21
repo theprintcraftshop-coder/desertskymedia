@@ -517,7 +517,7 @@ h3 {
 }
 
 .checklist span::before {
-  content: "â€¢";
+  content: "•";
   color: var(--primary);
   font-size: 1.2rem;
   line-height: 1;
